@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Posts</h1>
+
+<ul class="list-unstyled posts">
+  <%= render partial: "post", collection: @posts %>
+</ul>
+
+<br>
+
+<%= link_to 'New Post', new_post_path, class: "btn btn-success" %>
+
+<%= number_to_currency 5, unit: "dong", separator: ",", format: "%n %u" %>
+<%= number_to_human 1985293 %>
+<%= number_to_percentage eval("3/17"), precision: 4 %>
+<%= number_with_delimiter 1200402349023, delimiter: "," %>

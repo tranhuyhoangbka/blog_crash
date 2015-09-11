@@ -1,0 +1,6 @@
+<%= content_tag_for :li, post do %>
+  <h2><%= link_to post.title, post_path(post) %></h2><br>
+  <p>posted on <%= friendly_date post.created_at %></p>
+  <%= link_to "<i class='glyphicon glyphicon-pencil text-info'></i>".html_safe, edit_post_path(post) %> |
+  <%= link_to "<i class='glyphicon glyphicon-remove text-danger'></i>".html_safe, post_path(post), method: :delete, data: {confirm: "Are you sure?", disable_with: "processing..."} %>
+<% end %>
