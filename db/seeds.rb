@@ -9,6 +9,6 @@
   Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph)
 end
 20.times do
-  Coment.create(author: Faker::Name.name, body: Faker::Lorem.sentence, post_id: rand(1..10))
+  Comment.create(author: Faker::Name.name, body: Faker::Lorem.sentence, post_id: rand(1..10))
 end
 
