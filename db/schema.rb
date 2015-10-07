@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913161257) do
+ActiveRecord::Schema.define(version: 20151007063423) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "api_token",  limit: 255
   end
 
   create_table "authors_books", id: false, force: :cascade do |t|
@@ -80,7 +81,10 @@ ActiveRecord::Schema.define(version: 20150913161257) do
     t.text     "body",       limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "author_id",  limit: 4
   end
+
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id", using: :btree
 
   create_table "venues", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -91,4 +95,5 @@ ActiveRecord::Schema.define(version: 20150913161257) do
   add_foreign_key "comments", "posts"
   add_foreign_key "performances", "bands"
   add_foreign_key "performances", "venues"
+  add_foreign_key "posts", "authors"
 end
