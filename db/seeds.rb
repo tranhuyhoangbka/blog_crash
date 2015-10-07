@@ -5,8 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Author.create([{name: "tranhuyhoang"}, {name: "mocuyenthanh"}])
+
 10.times do
-  Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph)
+  Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph, author_id: [1, 2].sample)
 end
 20.times do
   Comment.create(author: Faker::Name.name, body: Faker::Lorem.sentence, post_id: rand(1..10))
