@@ -1,0 +1,8 @@
+= simple_form_for @user, defaults: {input_html: {class: "defaultClass"}} do |f|
+  = f.input :username, hint: "Enter 1 valid name", placeholder: "Jonh oshea", label: "Your name", error: 'Username is mandatory, please specify one', input_html: {maxlength: 20}, wrapper_html: {class: "wrap_for_user_name"}
+  = f.input :password, label: false, error_html: {class: "errorPassword"}, wrapper_html: {id: "password"}
+  = f.input :email, hint: "Enter valid email", hint_html: {class: "emailHint"}, input_html: {class: "emailInput"}
+  = f.input :intro, as: :string
+  = f.input :birthday, as: :date
+  = f.input :remember_me, inline_label: "Yes, remember me", input_html: {class: "rememberMe", value: 1}, label: false, wrapper_html: {class: "options"}
+  = f.button :submit

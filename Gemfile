@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
+gem "simple_form"
 gem 'acts_as_commentable'
 gem "faker"
+gem "haml"
+gem 'jquery-timepicker-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use mysql as the database for Active Record
